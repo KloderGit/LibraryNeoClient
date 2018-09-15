@@ -17,10 +17,10 @@ namespace ServiceLibraryNeoClient.Implements
         IPartTime<FormNode> EducationFormRepository;
         IAttestationRepository<AttestationNode> AttestationRepository;
 
-        public DataManager()
+        public DataManager(Uri path, string user, string pass)
         {
 
-            this.client = new Neo4jClient.GraphClient(new Uri("http://localhost:7474/db/data"));
+            this.client = new Neo4jClient.GraphClient(path, user, pass);
 
             client.Connect();
         }
